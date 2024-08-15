@@ -1,4 +1,7 @@
 # Containerizing a React Notes application using Django as backend and Postgres as Database.
+
+![Diagram](https://github.com/Helion55/Django-React-Docker/blob/main/Django-React.jpg?raw=true)
+
 A Notes application using authentication system to signup and login with JWT Tokens, using Django as backend which is connected with PostgresSQL to store data and frontend made with React.
 ## Tech Stack
 - Django
