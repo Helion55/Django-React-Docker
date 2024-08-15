@@ -1,14 +1,14 @@
 # Containerizing a React Notes application using Django as backend and Postgres as Database.
 A Notes application using authentication system to signup and login with JWT Tokens, using Django as backend which is connected with PostgresSQL to store data and frontend made with React.
 ## Tech Stack
-- 1. Django
-  2. React
-  3. Postgres
-  4. Docker - Compose
+- Django
+- React
+- Postgres
+- Docker - Compose
 
 ## Django
 The backend is running on port 8000 and connecting with database through the environment variables passed from Dockerfile. Here is the Dockerfile ...
-```
+```Dockerfile
 FROM python:3.8-slim-buster
 EXPOSE 8000
 
@@ -34,7 +34,7 @@ CMD [ "python3", "manage.py", "runserver"]
 ```
 ## React
 React is used for the frontend with Vite server, serving on port 5173, Dockerfile for the frontend ...
-```
+```Dockerfile
 FROM node:alpine
 
 EXPOSE 5173
@@ -54,7 +54,7 @@ Postgres is used to store the data, which running on a container running on dock
 
 ### Docker
 Whole application stack running on docker compose stack and the Dockerfiles are also created on the directory of frontend and backend, this is the compose file ...
-```
+```Dockerfile
 version: '3.9'
 
 services:
@@ -84,8 +84,8 @@ services:
 volumes:
    postgres_data:
 ```
-After applying the command
-```
+After applying the command,
+```shell
 docker compose up
 ```
 the whole application stack will start to run. This Docker Images can also be used to deploy on Kubernetes Cluster.
