@@ -54,7 +54,7 @@ Postgres is used to store the data, which running on a container running on dock
 
 ### Docker
 Whole application stack running on docker compose stack and the Dockerfiles are also created on the directory of frontend and backend, this is the compose file ...
-```Dockerfile
+```compose
 version: '3.9'
 
 services:
