@@ -11,7 +11,7 @@ A Notes application using authentication system to signup and login with JWT Tok
 
 ## Django
 The backend is running on port 8000 and connecting with database through the environment variables passed from Dockerfile. Here is the Dockerfile ...
-```
+```Dockerfile
 FROM python:3.7.3-stretch
 
 ENV PYTHONUNBUFFERED 1
@@ -30,7 +30,7 @@ RUN python manage.py makemigrations
 ```
 ## React
 React is used for the frontend with Vite server, serving on port 5173, Dockerfile for the frontend ...
-```
+```Dockerfile
 FFROM node:alpine
 
 EXPOSE 3000
@@ -49,7 +49,7 @@ Postgres is used to store the data, which running on a container running on dock
 
 ### Docker
 Whole application stack running on docker compose stack and the Dockerfiles are also created on the directory of frontend and backend, this is the compose file ...
-```
+```yaml
 services:
   db:
     container_name: db
