@@ -21,7 +21,7 @@ services:
       - DB_DB=postgres
       - DB_HOST=db
       - DB_PORT=5432
-    command: python manage.py runserver 0.0.0.0:8000
+    command: python manage.py migrate && python manage.py runserver 0.0.0.0:8000
     depends_on:
       - db
   frontend:
