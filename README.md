@@ -39,18 +39,12 @@ CMD [ "python3", "manage.py", "runserver"]
 React is used for the frontend with Vite server, serving on port 5173, Dockerfile for the frontend ...
 ```Dockerfile
 FROM node:alpine
-
-EXPOSE 5173
-
 WORKDIR /app
-
-ENV VITE_API_URL=http://127.0.0.1:8000
-
 COPY . .
-
-RUN npm i
-
-CMD ["npm", "run", "dev"]
+ENV VITE_API_URL=http://127.0.0.1:8000
+RUN npm ci
+CMD ["npx", "vite", "--host"]
+EXPOSE 3000
 ```
 ### Postgres
 Postgres is used to store the data, which running on a container running on docker compose stack, running on port 5432 and mounted a volume named ``` postgres_data ```.
