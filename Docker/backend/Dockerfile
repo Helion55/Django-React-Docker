@@ -1,23 +1,15 @@
-FROM python:3.8-slim-buster
-EXPOSE 8000
+FROM python:3.7.3-stretch
+
+ENV PYTHONUNBUFFERED 1
 
 WORKDIR /app
 
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+COPY requirements.txt .
 
-ENV DB_HOST database
-ENV DB_PORT 5432
-ENV DB_USER django
-ENV DB_NAME django
-ENV DB_PWD django
-
-COPY ./requirements.txt .
-RUN pip3 install -r requirements.txt
+RUN pip install -r requirements.txt
 
 COPY . .
 
-RUN python3 manage.py makemigrations
-RUN python3 manage.py migrate
-CMD [ "python3", "manage.py", "runserver"]
+EXPOSE 8000
 
+RUN python manage.py makemigrations

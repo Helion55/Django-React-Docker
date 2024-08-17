@@ -1,14 +1,13 @@
 FROM node:alpine
 
+EXPOSE 3000
 EXPOSE 5173
 
 WORKDIR /app
 
-ENV VITE_API_URL=http://127.0.0.1:8000
-
 COPY . .
 
-RUN npm i
+RUN npm ci
 
-CMD ["npm", "run", "dev"]
+CMD ["npx", "vite", "--host"]
 
