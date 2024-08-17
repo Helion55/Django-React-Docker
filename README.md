@@ -91,7 +91,7 @@ volumes:
   pgdata: {}
 ```
 After applying the command
-```
+```bash
 docker compose up
 ```
 the whole application stack will start to run. This Docker Images can also be used to deploy on Kubernetes Cluster.
